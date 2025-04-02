@@ -9,7 +9,7 @@ To run the application correctly, you’ll need to create a few additional folde
 
 ### 📹 Media Files
 
-Download and place the 360° videos inside the `media` folder from the following Google Drive link:
+Create a `media` folder, download and place the 360° videos inside the `media` folder from the following Google Drive link:
 
 [📁 Media Files – Google Drive](https://drive.google.com/drive/folders/1lmGMQn5DdR1Qlcig4oVIhJ8RrsB7peMw?usp=sharing)
 
