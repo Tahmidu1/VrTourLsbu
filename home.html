@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>LSBU VR Tour</title>
+    <script src="Assets/aframe.js"></script>
+    <script src="Assets/environment.js"></script>
+    <script src="https://unpkg.com/aframe-animation-component@6.0.0/dist/aframe-animation-component.min.js"></script>
+    <script src="https://unpkg.com/aframe-event-set-component@5.0.0/dist/aframe-event-set-component.min.js"></script>
+  </head>
+
+  <body>
+    <a-scene environment="preset: starry; groundColor: #222; ground: canyon; skyType: gradient" cursor="rayOrigin: mouse">
+      
+      <!-- Camera & Cursor -->
+      <a-entity camera position="0 1.6 0" look-controls>
+        <a-entity 
+          cursor="fuse: true; fuseTimeout: 1000" 
+          position="0 0 -1" 
+          geometry="primitive: ring; radiusInner: 0.02; radiusOuter: 0.03" 
+          material="color: red; shader: flat"
+        ></a-entity>
+      </a-entity>
+
+      <!-- Title -->
+      <a-text 
+        value="Explore LSBU in VR" 
+        position="0 3 -5" 
+        align="center" 
+        color="white" 
+        width="6"
+      ></a-text>
+
+      <!-- Portals -->
+      <a-box color="#00FFFF" position="-4 1 -5" depth="0.5" height="0.5" width="0.5" 
+             link="href: student.html"
+             event-set__enter="_event: mouseenter; scale: 0.6 0.6 0.6"
+             event-set__leave="_event: mouseleave; scale: 0.5 0.5 0.5"></a-box>
+      <a-text value="Student Life" position="-4 0.3 -5" align="center" color="white"></a-text>
+
+      <a-box color="#00FF00" position="-2 1 -5" depth="0.5" height="0.5" width="0.5" 
+             link="href: pb.html"
+             event-set__enter="_event: mouseenter; scale: 0.6 0.6 0.6"
+             event-set__leave="_event: mouseleave; scale: 0.5 0.5 0.5"></a-box>
+      <a-text value="PB" position="-2 0.3 -5" align="center" color="white"></a-text>
+
+      <a-box color="#FFFF00" position="0 1 -5" depth="0.5" height="0.5" width="0.5" 
+             link="href: library.html"
+             event-set__enter="_event: mouseenter; scale: 0.6 0.6 0.6"
+             event-set__leave="_event: mouseleave; scale: 0.5 0.5 0.5"></a-box>
+      <a-text value="Library" position="0 0.3 -5" align="center" color="white"></a-text>
+
+      <a-box color="#FFA500" position="2 1 -5" depth="0.5" height="0.5" width="0.5" 
+             link="href: lecture.html"
+             event-set__enter="_event: mouseenter; scale: 0.6 0.6 0.6"
+             event-set__leave="_event: mouseleave; scale: 0.5 0.5 0.5"></a-box>
+      <a-text value="Lecture K" position="2 0.3 -5" align="center" color="white"></a-text>
+
+      <a-box color="#FF1493" position="4 1 -5" depth="0.5" height="0.5" width="0.5" 
+             link="href: index.html"
+             event-set__enter="_event: mouseenter; scale: 0.6 0.6 0.6"
+             event-set__leave="_event: mouseleave; scale: 0.5 0.5 0.5"></a-box>
+      <a-text value="Main Menu" position="4 0.3 -5" align="center" color="white"></a-text>
+
+    </a-scene>
+  </body>
+</html>
