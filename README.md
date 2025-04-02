@@ -1,5 +1,40 @@
-# VrTourLsbu
-For this application to work, you need to create an addition folder called 'media' where you would need to place these following videos alongside few .glb files in 'models' folder.
+# 🎓 Virtual LSBU Tour – VR Web Application
 
-The media videos could be found in this link: https://drive.google.com/drive/folders/1lmGMQn5DdR1Qlcig4oVIhJ8RrsB7peMw?usp=sharing
-Additional .glb files for assets: https://drive.google.com/drive/folders/1KHntWx4NzvYlnx5Tya4IZ8Xb-EonjO18?usp=sharing
+This repository contains the source code for the **Virtual LSBU Tour**, a browser-based VR experience designed to showcase key LSBU sites using 360° videos and 3D models.
+
+## 📁 Project Setup
+
+To run the application correctly, you’ll need to create a few additional folders and include the required media and model files as outlined below.
+
+
+### 📹 Media Files
+
+Download and place the 360° videos inside the `media` folder from the following Google Drive link:
+
+[📁 Media Files – Google Drive](https://drive.google.com/drive/folders/1lmGMQn5DdR1Qlcig4oVIhJ8RrsB7peMw?usp=sharing)
+
+### 📦 3D Models (.glb)
+
+Download the required `.glb` assets and place them in the `models` folder:
+
+[📁 3D Models – Google Drive](https://drive.google.com/drive/folders/1KHntWx4NzvYlnx5Tya4IZ8Xb-EonjO18?usp=sharing)
+
+---
+
+## 🚀 Getting Started
+
+After placing the media and models, you can open `index.html` in a modern browser (preferably Chrome) to launch the experience.
+
+> For VR mode, ensure your device/browser supports WebXR or an immersive viewer like Meta Quest Browser or Firefox Reality.
+
+---
+
+## 🛠 Maintenance
+
+This project is actively maintained using version control in this GitHub repository. Updates, fixes, and new features will be pushed regularly. Please refer to the [Issues](../../issues) tab for bug tracking and improvement suggestions.
+
+---
+
+## 📄 License
+
+This project is for educational use under the AR/VR Technologies module at LSBU.
