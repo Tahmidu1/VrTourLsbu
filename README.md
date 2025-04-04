@@ -13,9 +13,6 @@ Create a `media` folder, download and place the 360° videos inside the `media` 
 
 [📁 Media Files – Google Drive](https://drive.google.com/drive/folders/1FtMZZwg9_PAlaCB2m5g3r9LPsfNT1C9k?usp=sharing)
 
-### 📦 3D Models (.glb)
-
-
 ---
 
 ## 🚀 Getting Started
