@@ -11,13 +11,10 @@ To run the application correctly, you’ll need to create a few additional folde
 
 Create a `media` folder, download and place the 360° videos inside the `media` folder from the following Google Drive link:
 
-[📁 Media Files – Google Drive](https://drive.google.com/drive/folders/1lmGMQn5DdR1Qlcig4oVIhJ8RrsB7peMw?usp=sharing)
+[📁 Media Files – Google Drive](https://drive.google.com/drive/folders/1FtMZZwg9_PAlaCB2m5g3r9LPsfNT1C9k?usp=sharing)
 
 ### 📦 3D Models (.glb)
 
-Download the required `.glb` assets and place them in the `models` folder:
-
-[📁 3D Models – Google Drive](https://drive.google.com/drive/folders/1KHntWx4NzvYlnx5Tya4IZ8Xb-EonjO18?usp=sharing)
 
 ---
 
