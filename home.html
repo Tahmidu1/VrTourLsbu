@@ -1,66 +1,103 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8" />
+    <meta charset="utf-8">
     <title>LSBU VR Tour</title>
-    <script src="Assets/aframe.js"></script>
-    <script src="Assets/environment.js"></script>
-    <script src="https://unpkg.com/aframe-animation-component@6.0.0/dist/aframe-animation-component.min.js"></script>
-    <script src="https://unpkg.com/aframe-event-set-component@5.0.0/dist/aframe-event-set-component.min.js"></script>
+    <script src="https://aframe.io/releases/1.4.2/aframe.min.js"></script>
+    <style>
+      .header {
+        position: fixed;
+        width: 100%;
+        top: 10px;
+        text-align: center;
+        color: white;
+        font-size: 24px;
+        z-index: 10;
+        font-family: sans-serif;
+      }
+    </style>
   </head>
-
   <body>
-    <a-scene environment="preset: starry; groundColor: #222; ground: canyon; skyType: gradient" cursor="rayOrigin: mouse">
-      
-      <!-- Camera & Cursor -->
-      <a-entity camera position="0 1.6 0" look-controls>
-        <a-entity 
-          cursor="fuse: true; fuseTimeout: 1000" 
-          position="0 0 -1" 
-          geometry="primitive: ring; radiusInner: 0.02; radiusOuter: 0.03" 
-          material="color: red; shader: flat"
-        ></a-entity>
+    <div class="header">Welcome to Virtual LSBU</div>
+
+    <a-scene>
+      <!-- ASSETS -->
+      <a-assets>
+        <img id="londonSky" src="media/london360.jpg">
+        <img id="lecture-preview" src="media/Lecture-k.png">
+        <img id="library-preview" src="media/library.png">
+        <img id="pb-preview" src="media/pb.png">
+        <img id="student-preview" src="media/student.life.png">
+      </a-assets>
+
+      <!-- 360° SKY BACKGROUND -->
+      <a-sky src="#londonSky" rotation="0 -130 0"></a-sky>
+
+      <!-- CAMERA + CURSOR -->
+      <a-entity camera look-controls position="0 1.8 0">
+        <a-cursor color="red" raycaster="objects: .portal"></a-cursor>
       </a-entity>
 
-      <!-- Title -->
-      <a-text 
-        value="Explore LSBU in VR" 
-        position="0 3 -5" 
-        align="center" 
-        color="white" 
-        width="6"
-      ></a-text>
+      <!-- PORTALS WITH PREVIEW IMAGES -->
+      <a-link class="portal"
+              position="-5 1 -4"
+              href="lecture.html"
+              title="Lecture Hall K"
+              image="#lecture-preview"
+              animation__bob="property: object3D.position.y; from: 1; to: 1.2; dur: 1000; dir: alternate; loop: true"
+              animation__hover="property: object3D.position.z; startEvents: mouseenter; pauseEvents: mouseleave; from: -4; to: -3.8; dur: 300">
+      </a-link>
 
-      <!-- Portals -->
-      <a-box color="#00FFFF" position="-4 1 -5" depth="0.5" height="0.5" width="0.5" 
-             link="href: student.html"
-             event-set__enter="_event: mouseenter; scale: 0.6 0.6 0.6"
-             event-set__leave="_event: mouseleave; scale: 0.5 0.5 0.5"></a-box>
-      <a-text value="Student Life" position="-4 0.3 -5" align="center" color="white"></a-text>
+      <a-link class="portal"
+              position="-1.5 1 -4"
+              href="library.html"
+              title="Library"
+              image="#library-preview"
+              animation__bob="property: object3D.position.y; from: 1; to: 1.2; dur: 1000; dir: alternate; loop: true"
+              animation__hover="property: object3D.position.z; startEvents: mouseenter; pauseEvents: mouseleave; from: -4; to: -3.8; dur: 300">
+      </a-link>
 
-      <a-box color="#00FF00" position="-2 1 -5" depth="0.5" height="0.5" width="0.5" 
-             link="href: pb.html"
-             event-set__enter="_event: mouseenter; scale: 0.6 0.6 0.6"
-             event-set__leave="_event: mouseleave; scale: 0.5 0.5 0.5"></a-box>
-      <a-text value="PB" position="-2 0.3 -5" align="center" color="white"></a-text>
+      <a-link class="portal"
+              position="2 1 -4"
+              href="pb.html"
+              title="Perry Building"
+              image="#pb-preview"
+              animation__bob="property: object3D.position.y; from: 1; to: 1.2; dur: 1000; dir: alternate; loop: true"
+              animation__hover="property: object3D.position.z; startEvents: mouseenter; pauseEvents: mouseleave; from: -4; to: -3.8; dur: 300">
+      </a-link>
 
-      <a-box color="#FFFF00" position="0 1 -5" depth="0.5" height="0.5" width="0.5" 
-             link="href: library.html"
-             event-set__enter="_event: mouseenter; scale: 0.6 0.6 0.6"
-             event-set__leave="_event: mouseleave; scale: 0.5 0.5 0.5"></a-box>
-      <a-text value="Library" position="0 0.3 -5" align="center" color="white"></a-text>
+      <a-link class="portal"
+              position="5.5 1 -4"
+              href="student.html"
+              title="Student Life Centre"
+              image="#student-preview"
+              animation__bob="property: object3D.position.y; from: 1; to: 1.2; dur: 1000; dir: alternate; loop: true"
+              animation__hover="property: object3D.position.z; startEvents: mouseenter; pauseEvents: mouseleave; from: -4; to: -3.8; dur: 300">
+      </a-link>
 
-      <a-box color="#FFA500" position="2 1 -5" depth="0.5" height="0.5" width="0.5" 
-             link="href: lecture.html"
-             event-set__enter="_event: mouseenter; scale: 0.6 0.6 0.6"
-             event-set__leave="_event: mouseleave; scale: 0.5 0.5 0.5"></a-box>
-      <a-text value="Lecture K" position="2 0.3 -5" align="center" color="white"></a-text>
+      <!-- GOKU FLOATING/SPINNING -->
+      <a-entity gltf-model="models/goku.glb"
+                position="0 0 -6"
+                scale="0.6 0.6 0.6"
+                animation="property: rotation; to: 0 360 0; loop: true; dur: 5000"
+                animation__float="property: position; dir: alternate; dur: 2000; loop: true; from: 0 0 -6; to: 0 0.3 -6">
+      </a-entity>
 
-      <a-box color="#FF1493" position="4 1 -5" depth="0.5" height="0.5" width="0.5" 
-             link="href: index.html"
-             event-set__enter="_event: mouseenter; scale: 0.6 0.6 0.6"
-             event-set__leave="_event: mouseleave; scale: 0.5 0.5 0.5"></a-box>
-      <a-text value="Main Menu" position="4 0.3 -5" align="center" color="white"></a-text>
+      <!-- HOMER SIMPSON MOVED LEFT + SPINNING -->
+      <a-entity gltf-model="models/homer_simpson_3d_model.glb"
+                position="-8 0 -4"
+                scale="0.8 0.8 0.8"
+                animation="property: rotation; to: 0 360 0; loop: true; dur: 5000"
+                animation__bounce="property: position; dir: alternate; dur: 1800; loop: true; from: -8 0 -4; to: -8 0.3 -4">
+      </a-entity>
+
+      <!-- PETER GRIFFIN ON RIGHT -->
+      <a-entity gltf-model="models/peter_griffin_rigged.glb"
+                position="8 0 -4"
+                scale="1.2 1.2 1.2"
+                animation="property: rotation; to: 0 360 0; dur: 8000; loop: true"
+                animation__bob="property: position; dir: alternate; dur: 1800; loop: true; from: 8 0 -4; to: 8 0.3 -4">
+      </a-entity>
 
     </a-scene>
   </body>
